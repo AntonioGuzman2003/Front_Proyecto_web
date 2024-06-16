@@ -1,0 +1,28 @@
+<link rel="stylesheet" src="/src/app/app.component.css">
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">Cita Medica</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="Listar()" routerLinkActive="active">Listar Pacientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="Listarcitas()" routerLinkActive="active">Listar Citas</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div *ngIf="isHomePage" class="container-content">
+  <div>
+    <h1 class="titulo">Bienvenido</h1>
+    <p class="descripcion">Reserva tu cita</p>
+  </div>
+</div>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/src/app/Cita/listarcitas/listar-cita.component.css">
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="titulo text-center mb-4">LISTADO DE CITAS</h2>
+          <button class="btn btn-sm btn-success ml-2" (click)="Nuevocita()">
+            <i class="fas fa-save"></i> Nuevo
+          </button>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">ID Paciente</th>
+                  <th scope="col">Fecha </th>
+                  <th scope="col">Motivo</th>
+                  <th scope="col">Médico Asignado</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let cita of citas" class="text-center">
+                  <td>{{ cita.id }}</td>
+                  <td>{{ cita.pacienteId }}</td>
+                  <td>{{ cita.fechaHoraCita | date:'yyyy-MM-dd HH:mm' }}</td>
+                  <td>{{ cita.motivo }}</td>
+                  <td>{{ cita.medicoAsignado }}</td>
+                  <td>{{ cita.estado }}</td>
+                  <td>
+                    <button (click)="editarCita(cita.id)" class="btn btn-primary">Editar</button>
+                    <button class="btn btn-sm btn-danger ml-2" (click)="Delete(cita)">
+                      <i class="fas fa-trash"></i> Eliminar
+                    </button>
+                   
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h5 *ngIf="citas.length === 0" class="mt-3">No hay citas para mostrar.</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

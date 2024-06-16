@@ -1,0 +1,47 @@
+<link rel="stylesheet" src="/src/app/Paciente/listar/listar.component.css">
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="titulo text-center mb-4">LISTADO DE PACIENTES</h2>
+            <button class="btn btn-sm btn-success ml-2" (click)="Nuevo()">
+                <i class="fas fa-save"></i> Nuevo
+              </button>
+            <div class="table-responsive">
+              <table class="table table-hover table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let paciente of pacientes" class="text-center">
+                    <td>{{ paciente.id }}</td>
+                    <td>{{ paciente.nombre }}</td>
+                    <td>{{ paciente.edad }}</td>
+                    <td>{{ paciente.telefono }}</td>
+                    <td>
+                      <button class="btn btn-sm btn-primary" (click)="Editar(paciente)">
+                        <i class="fas fa-edit"></i> Editar
+                      </button>
+                      <button class="btn btn-sm btn-danger ml-2" (click)="Delete(paciente)">
+                        <i class="fas fa-trash"></i> Eliminar
+                      </button>
+                     
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h5 *ngIf="pacientes.length === 0" class="mt-3">No hay pacientes para mostrar.</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

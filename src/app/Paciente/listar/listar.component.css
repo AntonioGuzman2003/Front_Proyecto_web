@@ -1,0 +1,13 @@
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Cambia el color de fondo al pasar el cursor */
+  }
+  
+  @media (min-width: 992px) {
+    .text-center-lg {
+      text-align: center; /* Alinea el texto al centro en dispositivos grandes */
+    }
+  }
+  
+  button.ml-2 {
+    margin-left: 5px; /* Ajusta según tu preferencia */
+  }
